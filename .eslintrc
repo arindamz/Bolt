@@ -268,10 +268,6 @@
 			}
 		],
 		"line-comment-position": 0,
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
 		"lines-around-comment": 0,
 		"lines-between-class-members": [
 			"error",
