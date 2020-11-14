@@ -8,7 +8,7 @@ export class Playlist {
     @Column({ type: 'bigint' })
     public user!: string;
 
-    @Column({ type: 'biginit' })
+    @Column({ type: 'bigint' })
     public guild!: string;
 
     @Column({ type: 'text' })
