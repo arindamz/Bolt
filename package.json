@@ -1,7 +1,7 @@
 {
-  "name": "typescript-template",
-  "version": "1.0.0",
-  "description": "A typescript template for my typescript projects.",
+  "name": "bolt",
+  "version": "2.0.0",
+  "description": "A rich feature music bot",
   "main": "src/index.js",
   "repository": "git@github.com:Anish-Shobith/typescript-template.git",
   "author": "Anish Shobith P S <anish.shobith19@gmail.com>",
