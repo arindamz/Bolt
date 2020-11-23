@@ -1,9 +1,9 @@
 export enum SETTINGS {
-    BLACKLIST = 'BLACKLIST',
-    DJ = 'DJ'
+  BLACKLIST = 'BLACKLIST',
+  DJ = 'DJ',
 }
 
 export interface Settings {
-    BLACKLIST: string[];
-    DJ: string;
+  BLACKLIST: string[];
+  DJ: string;
 }

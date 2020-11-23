@@ -1,43 +1,44 @@
-import { BoltCommand, CommandOptions } from '../../Lib/Structures/BoltCommand';
+import { Command, CommandOptions } from 'discord-akairo';
 import { stripIndents } from 'common-tags';
 import { Message } from 'discord.js';
+import { ApplyOptions } from '../../Lib/Utils/ApplyOptions';
 
 const RESPONSES: string[] = [
-	'No.',
-	'Not happening.',
-	'Maybe later.',
-	stripIndents`:ping_pong: Pong! \`$(ping)ms\`
+  'No.',
+  'Not happening.',
+  'Maybe later.',
+  stripIndents`:ping_pong: Pong! \`$(ping)ms\`
 		Heartbeat: \`$(heartbeat)ms\``,
-	stripIndents`Firepower--full force!! \`$(ping)ms\`
+  stripIndents`Firepower--full force!! \`$(ping)ms\`
 		Doki doki: \`$(heartbeat)ms\``,
-	stripIndents`A fierce battle makes me want to eat a bucket full of rice afterwards. \`$(ping)ms\`
+  stripIndents`A fierce battle makes me want to eat a bucket full of rice afterwards. \`$(ping)ms\`
 		Heartbeat: \`$(heartbeat)ms\``,
-	stripIndents`This, this is a little embarrassing... \`$(ping)ms\`
+  stripIndents`This, this is a little embarrassing... \`$(ping)ms\`
 		Heartbeat: \`$(heartbeat)ms\``,
 ];
 
-
-@CommandOptions({
-	description: {
-		content: "Checks the bot's ping to the Discord servers.",
-	},
-	category: 'Core',
-	ratelimit: 2,
+@ApplyOptions<CommandOptions>('ping', {
+  aliases: ['ping'],
+  description: {
+    content: "Checks the bot's ping to the Discord servers.",
+  },
+  category: 'Core',
+  ratelimit: 2,
 })
-export default class Ping extends BoltCommand {
+export default class Ping extends Command {
+  public async exec(message: Message): Promise<Message | Message[]> {
+    const msg = await message.util!.send('Pinging...');
 
-	public async exec(message: Message): Promise<Message | Message[]> {
-		const msg = await message.util!.send('Pinging...');
-
-		return message.util!.send(
-			RESPONSES[Math.floor(Math.random() * RESPONSES.length)]
-				.replace(
-					'$(ping)',
-					(
-						(msg.editedTimestamp || msg.createdTimestamp) - (message.editedTimestamp || message.createdTimestamp)
-					).toString(),
-				)
-				.replace('$(heartbeat)', Math.round(this.client.ws.ping).toString()),
-		);
-	}
+    return message.util!.send(
+      RESPONSES[Math.floor(Math.random() * RESPONSES.length)]
+        .replace(
+          '$(ping)',
+          (
+            (msg.editedTimestamp || msg.createdTimestamp) -
+            (message.editedTimestamp || message.createdTimestamp)
+          ).toString()
+        )
+        .replace('$(heartbeat)', Math.round(this.client.ws.ping).toString())
+    );
+  }
 }

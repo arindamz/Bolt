@@ -18,6 +18,11 @@
 		"commonjs": true
 	},
 	"rules": {
+		"prettier/prettier": ["error", {
+			"endOfLine": "auto",
+			"singleQuote": true
+
+		}],
 		"@typescript-eslint/adjacent-overload-signatures": "error",
 		"@typescript-eslint/array-type": "off",
 		"@typescript-eslint/await-thenable": "off",
@@ -81,7 +86,7 @@
 					"match": false,
 					"regex": "^(?:VariableDeclarator|AssignmentExpression)$"
 				},
-				"format": ["camelCase"],
+				"format": ["camelCase", "UPPER_CASE"],
 				"leadingUnderscore": "forbid",
 				"selector": "default",
 				"trailingUnderscore": "forbid"
@@ -325,6 +330,10 @@
 		"no-void": "off",
 		"no-warning-comments": "off",
 		"no-with": "error",
+		"linebreak-style": [
+			"error",
+			"windows"
+		],
 		"object-shorthand": ["error", "always"],
 		"one-var": ["error", "never"],
 		"operator-assignment": ["error", "always"],
@@ -353,6 +362,23 @@
 		"prefer-rest-params": "warn",
 		"prefer-spread": "error",
 		"prefer-template": "warn",
+		"quote-props": [
+			"error",
+			"consistent-as-needed",
+			{
+				"keywords": true,
+				"unnecessary": true,
+				"numbers": false
+			}
+		],
+		"quotes": [
+			"error",
+			"single",
+			{
+				"avoidEscape": true,
+				"allowTemplateLiterals": true
+			}
+		],
 		"radix": "error",
 		"require-await": "off",
 		"require-jsdoc": "off",
