@@ -1,5 +1,6 @@
 import { Listener, ListenerOptions } from 'discord-akairo';
 import { ApplyOptions } from '../Lib/Utils/ApplyOptions';
+
 @ApplyOptions<ListenerOptions>('shardReconnecting', {
   emitter: 'client',
   event: 'shardReconnecting',

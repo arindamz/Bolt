@@ -3,6 +3,7 @@ import { Message, User } from 'discord.js';
 import { SETTINGS } from '../../Lib/Utils/Constants';
 import { ApplyOptions } from '../../Lib/Utils/ApplyOptions';
 import { floatPromise } from '../../Lib/Utils/floatPromise';
+
 @ApplyOptions<CommandOptions>('blacklist', {
   aliases: ['blacklist', 'unblacklist'],
   description: {

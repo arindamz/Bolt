@@ -2,6 +2,7 @@ import { Command, CommandOptions } from 'discord-akairo';
 import { stripIndents } from 'common-tags';
 import { Message, MessageEmbed } from 'discord.js';
 import { ApplyOptions } from '../../Lib/Utils/ApplyOptions';
+
 @ApplyOptions<CommandOptions>('help', {
   aliases: ['help', 'h', 'hlp'],
   description: {

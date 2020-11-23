@@ -2,6 +2,7 @@ import { Inhibitor, InhibitorOptions } from 'discord-akairo';
 import { Message } from 'discord.js';
 import { SETTINGS } from '../Lib/Utils/Constants';
 import { ApplyOptions } from '../Lib/Utils/ApplyOptions';
+
 @ApplyOptions<InhibitorOptions>('blacklist', {
   reason: 'blacklist',
 })
