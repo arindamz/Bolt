@@ -19,7 +19,7 @@
 	},
 	"rules": {
 		"prettier/prettier": ["error", {
-			"endOfLine": "off",
+			"endOfLine": "auto",
 			"singleQuote": true
 
 		}],
