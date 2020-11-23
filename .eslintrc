@@ -330,10 +330,6 @@
 		"no-void": "off",
 		"no-warning-comments": "off",
 		"no-with": "error",
-		"linebreak-style": [
-			"error",
-			"windows"
-		],
 		"object-shorthand": ["error", "always"],
 		"one-var": ["error", "never"],
 		"operator-assignment": ["error", "always"],
