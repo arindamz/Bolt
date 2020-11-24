@@ -1,7 +1,7 @@
 import { Listener, ListenerOptions } from 'discord-akairo';
 import { ReferenceType } from 'rejects';
-import { ApplyOptions } from '../Lib/Utils/ApplyOptions';
-import { floatPromise } from '../Lib/Utils/floatPromise';
+import { ApplyOptions } from '../../Lib/Utils/ApplyOptions';
+import { floatPromise } from '../../Lib/Utils/floatPromise';
 
 @ApplyOptions<ListenerOptions>('ready', {
   emitter: 'client',
